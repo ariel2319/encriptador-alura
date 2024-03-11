@@ -9,9 +9,12 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-h1{
+
+h1 {
   text-align: center;
+  text-transform: uppercase;
 }
+
 .container {
   max-width: 1024px;
   margin: 0 auto;
@@ -34,13 +37,14 @@ label {
 
 .ingreso input {
   width: 100%;
-  height: 80%;
-
+  height: 90%;
   border-radius: 0.5rem;
   border: 1px solid transparent;
+
   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4));
 }
-.buttonPrim{
+
+.buttonPrim {
   display: flex;
   justify-content: space-between;
 }
@@ -50,29 +54,32 @@ label {
   height: 75vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   padding: 1rem;
+
   border: 1px solid red;
   border-radius: 0.5rem;
 }
 
-/* input {
-  border: 1px solid transparent;
-} */
+input:focus {
+  outline: none;
+}
 
 .taResultado {
   width: 100%;
+  min-width: 200px;
   height: 90%;
   border-radius: 0.5rem;
   border: 1px solid transparent;
-
+  
   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4));
 }
 
-.buttonSec{
+.buttonSec {
   display: flex;
   justify-content: end;
 }
+
 footer {
   text-align: center;
   position: absolute;
@@ -97,4 +104,86 @@ footer {
 .retro:active {
   transform: translate(0.125rem 0.125rem);
   box-shadow: 0.125rem 0.125rem #121212;
+}
+
+.btnImg {
+  padding: 0.5rem;
+}
+
+.btnImg img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media only screen and (max-width:850px) {
+  body {
+    background: green;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .ingreso {
+    width: 100%;
+    height: 65vh;
+  }
+
+  .ingreso input {
+    height: 70%;
+    min-width: 200px;
+  }
+
+  .egreso {
+    width: 100%;
+    height: 35vh;
+    gap: 1rem;
+  }
+
+  .buttonPrim {
+    flex-direction: column;
+  }
+
+  .funciones {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 0.75rem;
+  }
+
+  .funciones button {
+    width: 45%;
+  }
+
+  .extraFunction {
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+    margin: 0.75rem;
+  }
+}
+
+@media only screen and (max-width:480px) {
+  body {
+    background: greenyellow;
+  }
+
+  .ingreso input {
+    height: 60%;
+  }
+
+  .funciones {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .extraFunction{
+    justify-content: center;
+  }
+  .funciones button {
+    width: 95%;
+    min-width: 200px;
+  }
+  
 }

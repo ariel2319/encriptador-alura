@@ -17,18 +17,22 @@
 
       <input id="texto" type="text" placeholder="Tu texto va aquí.." rows="4" cols="50"><br><br>
 
-      <label for="">🛈 Solo letras minúsculas y sin acentos </label>
+      <!-- <label for="">🛈 Solo letras minúsculas y sin acentos </label> -->
 
       <div class="buttonPrim">
         <div class="funciones">
 
           <button class="retro" onclick="encriptar()">Encriptar</button>
-          <button class="retro" onclick="desencriptar()">Desencriptar</button><br><br>
+          <button class="retro" onclick="desencriptar()">Desencriptar</button>
         </div>
         <div class="extraFunction">
 
-          <button class="retro" onclick="limpiar()">Reset</button>
-          <button class="retro" onclick="pegarTexto()"> </button>
+          <button class="retro btnImg" onclick="limpiar()" title="Reset Encriptador">
+            <img src="img/icono-regreso.png" alt=""></button>
+
+          <button class="retro btnImg" onclick="pegarTexto()" title="Pegar">
+            <img src="img/icono-pegar.png" alt="">
+          </button>
         </div>
       </div>
 
@@ -36,10 +40,10 @@
 
     <div class="egreso">
 
-      <input type="text" id="resultado" rows="4" cols="50" class="taResultado"><br><br>
+      <input type="text" id="resultado" rows="4" cols="50" class="taResultado" readonly>
 
       <div class="buttonSec">
-        <button class="retro" onclick="copiar()">Copiar</button>
+        <button class="retro" onclick="copiar()" title="Copiar">Copiar</button>
       </div>
     </div>
 
