@@ -20,20 +20,26 @@
       <label for="">🛈 Solo letras minúsculas y sin acentos </label>
 
       <div class="buttonPrim">
-        <button onclick="encriptar()">Encriptar</button>
-        <button onclick="desencriptar()">Desencriptar</button><br><br>
-        <button onclick="limpiar()">Reset</button>
-        <button onclick="pegarTexto()">Pegar</button>
+        <div class="funciones">
+
+          <button class="retro" onclick="encriptar()">Encriptar</button>
+          <button class="retro" onclick="desencriptar()">Desencriptar</button><br><br>
+        </div>
+        <div class="extraFunction">
+
+          <button class="retro" onclick="limpiar()">Reset</button>
+          <button class="retro" onclick="pegarTexto()"> </button>
+        </div>
       </div>
 
     </div>
 
     <div class="egreso">
-      
+
       <input type="text" id="resultado" rows="4" cols="50" class="taResultado"><br><br>
 
       <div class="buttonSec">
-        <button onclick="copiar()">Copiar</button>
+        <button class="retro" onclick="copiar()">Copiar</button>
       </div>
     </div>
 
