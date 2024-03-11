@@ -10,20 +10,37 @@
 </head>
 
 <body>
-  <h1>Encriptador/Desencriptador</h1>
+  <h1>Encriptador</h1>
+  <div class="container">
 
-  <button onclick="encriptar()">Encriptar</button>
-  <button onclick="desencriptar()">Desencriptar</button><br><br>
+    <div class="ingreso">
 
-  <textarea id="texto" placeholder="Tu texto va aquí.." rows="4" cols="50"></textarea><br><br>
+      <input id="texto" type="text" placeholder="Tu texto va aquí.." rows="4" cols="50"><br><br>
 
-  <textarea id="resultado" rows="4" cols="50"></textarea><br><br>
+      <label for="">🛈 Solo letras minúsculas y sin acentos </label>
 
-  <label for="">🛈 Solo letras minúsculas y sin acentos </label>
+      <div class="buttonPrim">
+        <button onclick="encriptar()">Encriptar</button>
+        <button onclick="desencriptar()">Desencriptar</button><br><br>
+        <button onclick="limpiar()">Reset</button>
+        <button onclick="pegarTexto()">Pegar</button>
+      </div>
 
-  <button onclick="pegarTexto()">Pegar</button>
-  <button onclick="copiar()">Copiar</button>
-  <button onclick="limpiar()">Reset</button>
+    </div>
+
+    <div class="egreso">
+      
+      <input type="text" id="resultado" rows="4" cols="50" class="taResultado"><br><br>
+
+      <div class="buttonSec">
+        <button onclick="copiar()">Copiar</button>
+      </div>
+    </div>
+
+  </div>
+  <footer>
+    Desarrollado por Ariel Maldonado ❤️
+  </footer>
 
   <script src="js/script.js"></script>
 
