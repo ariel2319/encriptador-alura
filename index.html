@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/normalize.css">
-  <title>Encriptador/Desencriptador</title>
+  <title>Encriptador-Desencriptador</title>
 </head>
 
 <body>
@@ -14,16 +14,17 @@
   <div class="container">
 
     <div class="ingreso">
+    
+      <textarea name="" id="texto" cols="50" rows="4" placeholder="Tu texto va aquí.."></textarea>
+      <!-- <input id="texto" type="text" placeholder="Tu texto va aquí.." rows="4" cols="50"> -->
 
-      <input id="texto" type="text" placeholder="Tu texto va aquí.." rows="4" cols="50"><br><br>
-
-      <!-- <label for="">🛈 Solo letras minúsculas y sin acentos </label> -->
+      <label for=""> <span>🛈</span> Solo letras minúsculas y sin acentos </label>
 
       <div class="buttonPrim">
         <div class="funciones">
 
-          <button class="retro" onclick="encriptar()">Encriptar</button>
-          <button class="retro" onclick="desencriptar()">Desencriptar</button>
+          <button style="min-width: 150px" class="retro" onclick="encriptar()">Encriptar</button>
+          <button style="min-width: 150px" class="retro" onclick="desencriptar()">Desencriptar</button>
         </div>
         <div class="extraFunction">
 
@@ -40,10 +41,11 @@
 
     <div class="egreso">
 
-      <input type="text" id="resultado" rows="4" cols="50" class="taResultado" readonly>
+        <textarea name="" id="resultado" cols="30" rows="10" class="taResultado" readonly></textarea>
+      <!-- <input type="text" id="resultado" rows="4" cols="50" class="taResultado" readonly> -->
 
       <div class="buttonSec">
-        <button class="retro" onclick="copiar()" title="Copiar">Copiar</button>
+        <button style="min-width: 150px" class="retro" onclick="copiar()" title="Copiar">Copiar</button>
       </div>
     </div>
 
