@@ -1,5 +1,5 @@
 :root {
-  --main-color: #1083D6;
+  --main-color: #1083d6;
   --title-color: #2A3B47;
   --text-color: #697477;
   --light-text-color: #A0A7AC;
@@ -49,17 +49,15 @@ h1 {
 }
 
 .container {
-  background: var(--container-color);
-  color: var(--text-color);
   max-width: 1024px;
+  color: var(--text-color);
+  background: var(--container-color);
   margin: 0 auto 1.5rem auto;
   padding: 1rem 0;
   display: flex;
   flex-direction: row;
   gap: 1rem;
 
-  /* border: 0.125rem solid #121212; */
-  /*   filter: drop-shadow(4px 4px #121212); */
   border-radius: 0.5rem;
   box-shadow: 4px 4px var(--shadow-color);
 }
@@ -83,10 +81,7 @@ label {
   height: 80%;
   border-radius: 0.5rem;
   border: 1px solid transparent;
-
   resize: none;
-
-  /*   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4)); */
   margin-bottom: 1.5rem;
   color: var(--text-color);
 }
@@ -96,12 +91,14 @@ label {
   justify-content: space-between;
 }
 
+span {
+  font-size: medium;
+}
+
 .egreso {
   width: 400px;
   height: 75vh;
   padding: 1rem;
-
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -116,12 +113,10 @@ textarea:focus {
   min-width: 200px;
   height: 80%;
   border-radius: 0.5rem;
-  /* border: 1px solid transparent; */
   resize: none;
 
   border: 0.125rem solid var(--border-color);
   filter: drop-shadow(4px 4px var(--shadow-color));
-  /* box-shadow: 0.25rem 0.25rem var(--shadow-color); */
   margin-bottom: 1.5rem;
 
   color: var(--text-color);
@@ -144,20 +139,28 @@ footer {
 .retro {
   font-weight: bold;
   text-transform: uppercase;
-
-
+  filter: drop-shadow(4px 4px var(--shadow-color));
   background-color: var(--container-color);
   padding: 0.75rem 1rem;
-  border-radius: 0.25rem;
-  border: 0.125rem solid var(--border-color);
-  box-shadow: 0.25rem 0.25rem var(--shadow-color);
-
-  transition: transform 50ms, box-shadow 50ms;
+  border: 0.125rem solid var(--shadow-color);
+  border-radius: 0.1rem;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 var(--shadow-color);
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
 }
 
 .retro:active {
   transform: translate(0.125rem 0.125rem);
   box-shadow: 0.125rem 0.125rem var(--shadow-color);
+}
+
+.retro:hover {
+  box-shadow: inset 400px 0 0 0 var(--shadow-color);
+  color: var(--main-color);
+  transform: scale(0.99);
 }
 
 .btnImg {
