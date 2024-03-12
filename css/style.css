@@ -1,7 +1,32 @@
+:root {
+  --main-color: #1083D6;
+  --title-color: #2A3B47;
+  --text-color: #697477;
+  --light-text-color: #A0A7AC;
+  --border-color: #EFF3F5;
+  --container-color: #FFFFFF;
+  --body-color: #FBFBFE;
+  --shadow-color: #121212;
+}
+
+body.dark-theme {
+  --main-color: #52A5E0;
+  --title-color: #EFF3F5;
+  --text-color: #C8CDD0;
+  --light-text-color: #A0A7AC;
+  --border-color: #21394b;
+  --container-color: #212E36;
+  --body-color: #192229;
+  --shadow-color: #f1eeee;
+}
+
 body {
   font-family: 'Courier New', Courier, monospace, Times, serif;
   font-weight: 700;
   min-height: 100vh;
+
+  background: var(--body-color);
+  color: var(--text-color);
 }
 
 * {
@@ -11,18 +36,32 @@ body {
 }
 
 h1 {
+  color: var(--title-color);
+  text-align: center;
   padding: 1rem;
   text-transform: uppercase;
 }
 
+.title button {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
 .container {
+  background: var(--container-color);
+  color: var(--text-color);
   max-width: 1024px;
   margin: 0 auto 1.5rem auto;
   padding: 1rem 0;
   display: flex;
   flex-direction: row;
   gap: 1rem;
- /*  border: 1px solid green; */
+
+  /* border: 0.125rem solid #121212; */
+  /*   filter: drop-shadow(4px 4px #121212); */
+  border-radius: 0.5rem;
+  box-shadow: 4px 4px var(--shadow-color);
 }
 
 .ingreso {
@@ -33,7 +72,6 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
 
-/*   border: 1px solid blue; */
 }
 
 label {
@@ -48,8 +86,9 @@ label {
 
   resize: none;
 
-/*   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4)); */
+  /*   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4)); */
   margin-bottom: 1.5rem;
+  color: var(--text-color);
 }
 
 .buttonPrim {
@@ -66,8 +105,6 @@ label {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
- /*  border: 1px solid red; */
 }
 
 textarea:focus {
@@ -79,13 +116,15 @@ textarea:focus {
   min-width: 200px;
   height: 80%;
   border-radius: 0.5rem;
-  border: 1px solid transparent;
-
+  /* border: 1px solid transparent; */
   resize: none;
-  border: 0.125rem solid #121212;
-  filter: drop-shadow(4px 4px  #121212); 
-  /* box-shadow: 0.25rem 0.25rem #121212; */
+
+  border: 0.125rem solid var(--border-color);
+  filter: drop-shadow(4px 4px var(--shadow-color));
+  /* box-shadow: 0.25rem 0.25rem var(--shadow-color); */
   margin-bottom: 1.5rem;
+
+  color: var(--text-color);
 }
 
 .buttonSec {
@@ -95,12 +134,10 @@ textarea:focus {
 }
 
 footer {
-  /* background: rgb(18, 18, 18, 0.9); */
   text-align: center;
-/*   position: fixed;
- */  bottom: 0;
+  bottom: 0;
   width: 100%;
-  color: crimson;
+  color: var(--main-color);
   padding: 0.5rem 0;
 }
 
@@ -108,18 +145,19 @@ footer {
   font-weight: bold;
   text-transform: uppercase;
 
-  background-color: white;
+
+  background-color: var(--container-color);
   padding: 0.75rem 1rem;
   border-radius: 0.25rem;
-  border: 0.125rem solid #121212;
-  box-shadow: 0.25rem 0.25rem #121212;
+  border: 0.125rem solid var(--border-color);
+  box-shadow: 0.25rem 0.25rem var(--shadow-color);
 
   transition: transform 50ms, box-shadow 50ms;
 }
 
 .retro:active {
   transform: translate(0.125rem 0.125rem);
-  box-shadow: 0.125rem 0.125rem #121212;
+  box-shadow: 0.125rem 0.125rem var(--shadow-color);
 }
 
 .btnImg {
@@ -132,11 +170,8 @@ footer {
 }
 
 @media only screen and (max-width:850px) {
-  body {
-    background: green;
-  }
 
-  h1{
+  h1 {
     text-align: center;
     padding-bottom: 0;
   }
@@ -186,10 +221,6 @@ footer {
 }
 
 @media only screen and (max-width:480px) {
-  body {
-    background: greenyellow;
-  }
-
   .ingreso textarea {
     height: 60%;
   }
@@ -208,4 +239,22 @@ footer {
     min-width: 200px;
   }
 
+}
+
+.change-theme-button {
+  font-size: 20px;
+  font-weight: 600;
+  outline: none;
+  color: var(--title-color);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.change-theme-button::before {
+  content: '🌞';
+}
+
+.dark-theme .change-theme-button::before {
+  content: '🌚';
 }
