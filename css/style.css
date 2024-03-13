@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
   --main-color: #1083d6;
   --title-color: #2A3B47;
@@ -21,7 +23,7 @@ body.dark-theme {
 }
 
 body {
-  font-family: 'Courier New', Courier, monospace, Times, serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   min-height: 100vh;
 
@@ -40,6 +42,14 @@ h1 {
   text-align: center;
   padding: 1rem;
   text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.1rem;
+  font-weight: bold;
+
 }
 
 .title button {
@@ -91,6 +101,10 @@ label {
   justify-content: space-between;
 }
 
+.funciones{
+  gap: 5rem;
+}
+
 span {
   font-size: medium;
 }
@@ -137,6 +151,7 @@ footer {
 }
 
 .retro {
+  margin: 0.2rem;
   font-weight: bold;
   text-transform: uppercase;
   filter: drop-shadow(4px 4px var(--shadow-color));
@@ -185,7 +200,7 @@ footer {
 
   .ingreso {
     width: 100%;
-    height: 65vh;
+    height: 50vh;
   }
 
   .ingreso textarea {
