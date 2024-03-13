@@ -1,6 +1,8 @@
 document.getElementById("resultado").value = " Aquí el texto encriptado... ";
+
 let label = document.getElementById("rules");
 let textArea = document.getElementById("texto");
+let copy = document.getElementById("copy");
 
 /* Manejo de eventos */
 
@@ -32,6 +34,7 @@ function encriptar() {
   if (texto != "") {
     resultado.value = texto.replace(/e/g, "enter").replace(/i/g, "imes").replace(/a/g, "ai").replace(/o/g, "ober").replace(/u/g, "ufat");
     document.getElementById("resultado").style.backgroundImage = "none";
+    copy.disabled = false;
   } else {
     label.style.color = "crimson";
     label.style.fontSize = "medium";
@@ -52,8 +55,10 @@ function desencriptar() {
 
 function copiar() {
   let resultado = document.getElementById("resultado");
-  resultado.select();
-  document.execCommand("copy");
+  if (copy.disabled === false) {
+    resultado.select();
+    document.execCommand("copy");
+  }
 }
 
 function pegarTexto() {
@@ -69,6 +74,7 @@ function limpiar() {
   document.getElementById("resultado").value = " Aquí el texto encriptado... ";
   label.style.color = "var(--text-color)";
   label.style.fontSize = "0.7rem";
+  copy.disabled = true;
   /* console.log(window.innerWidth, 'ancho'); */
   if (window.innerWidth > 850) {
     document.getElementById("resultado").style.backgroundImage = "url(/img/SearchCoding.svg)";
