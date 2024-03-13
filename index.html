@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/normalize.css">
-  
+
 
   <title>Encriptador-Desencriptador</title>
 </head>
@@ -21,9 +21,8 @@
     <div class="ingreso">
 
       <textarea name="" id="texto" cols="50" rows="4" placeholder=" Tu texto a encriptar va aquí.."></textarea>
-      <!-- <input id="texto" type="text" placeholder="Tu texto va aquí.." rows="4" cols="50"> -->
 
-      <label for=""> <span>🛈</span> Solo letras minúsculas y sin acentos </label>
+      <label id="rules"> <span>🛈</span> Solo letras minúsculas y sin acentos </label>
 
       <div class="buttonPrim">
 
@@ -47,9 +46,8 @@
 
     <div class="egreso">
 
-      <textarea name="" id="resultado" cols="30" rows="10" class="taResultado" readonly></textarea>
-      <!-- <input type="text" id="resultado" rows="4" cols="50" class="taResultado" readonly> -->
-
+      <textarea name="" id="resultado" cols="30" rows="10" class="taResultado" readonly>
+      </textarea>
       <div class="buttonSec">
         <button style="min-width: 150px" class="retro" onclick="copiar()">Copiar</button>
       </div>
@@ -57,7 +55,7 @@
 
   </div>
   <footer>
-    Desarrollado por <a href="">Ariel Maldonado </a> ❤️
+    Desarrollado por <a href="https://www.linkedin.com/in/maldonadoaa/" target="_blank">Ariel Maldonado </a> ❤️
   </footer>
 
   <script src="js/script.js"></script>

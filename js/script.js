@@ -1,26 +1,53 @@
-
+document.getElementById("resultado").value = " Aquí el texto encriptado... ";
+let label = document.getElementById("rules");
 let textArea = document.getElementById("texto");
+
+/* Manejo de eventos */
+
 textArea.addEventListener("input", function (event) {
   let texto = event.target.value;
   let textoMinusculas = texto.toLowerCase().replace(/[áéíóúÁÉÍÓÚüÜñÑ1234567890¨´]/g, "");
 
   if (texto !== textoMinusculas) {
     event.target.value = textoMinusculas;
+    label.style.color = "crimson";
+    label.style.fontSize = "medium";
   }
 });
+
+window.addEventListener("resize", function () {
+  if (window.innerWidth > 850) {
+    document.getElementById("resultado").style.backgroundImage = "url(/img/SearchCoding.svg)";
+  } else {
+    document.getElementById("resultado").style.backgroundImage = "none";
+  }
+})
+
+/* funciones */
 
 function encriptar() {
   let texto = document.getElementById("texto").value;
   let resultado = document.getElementById("resultado");
 
-  resultado.value = texto.replace(/e/g, "enter").replace(/i/g, "imes").replace(/a/g, "ai").replace(/o/g, "ober").replace(/u/g, "ufat");
+  if (texto != "") {
+    resultado.value = texto.replace(/e/g, "enter").replace(/i/g, "imes").replace(/a/g, "ai").replace(/o/g, "ober").replace(/u/g, "ufat");
+    document.getElementById("resultado").style.backgroundImage = "none";
+  } else {
+    label.style.color = "crimson";
+    label.style.fontSize = "medium";
+  }
 }
 
 function desencriptar() {
-  let texto = document.getElementById("texto").value;
-  let resultado = document.getElementById("resultado");
+  var texto = document.getElementById("texto").value;
+  var resultado = document.getElementById("resultado");
 
-  resultado.value = texto.replace(/enter/g, "e").replace(/imes/g, "i").replace(/ai/g, "a").replace(/ober/g, "o").replace(/ufat/g, "u");
+  if (texto !== "") {
+    resultado.value = texto.replace(/\benter\b/g, "e").replace(/\bimes\b/g, "i").replace(/\bai\b/g, "a").replace(/\bober\b/g, "o").replace(/\bufat\b/g, "u");
+  } else {
+    label.style.color = "crimson";
+    label.style.fontSize = "medium";
+  }
 }
 
 function copiar() {
@@ -38,10 +65,19 @@ function pegarTexto() {
 }
 
 function limpiar() {
-  document.getElementById("texto").value = " ";
-  document.getElementById("resultado").value = " ";
+  textArea.value = "";
+  document.getElementById("resultado").value = " Aquí el texto encriptado... ";
+  label.style.color = "var(--text-color)";
+  label.style.fontSize = "0.7rem";
+  /* console.log(window.innerWidth, 'ancho'); */
+  if (window.innerWidth > 850) {
+    document.getElementById("resultado").style.backgroundImage = "url(/img/SearchCoding.svg)";
+  } else {
+    document.getElementById("resultado").style.backgroundImage = "none";
+  }
 }
 
+/* DARK MODE */
 
 const themeButton = document.getElementById('theme-button');
 const darkTheme = 'dark-theme';
