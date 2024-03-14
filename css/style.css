@@ -118,15 +118,18 @@ span {
   justify-content: space-between;
 }
 
+.egreso img {
+  position: absolute;
+  top: 25%;
+  scale: 85%;
+  z-index: 1;
+}
+
 textarea:focus {
   outline: none;
 }
 
 .egreso textarea {
-  background-image: url(/img/SearchCoding.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 75%;
   width: 100%;
   min-width: 200px;
   height: 80%;

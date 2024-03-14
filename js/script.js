@@ -19,9 +19,9 @@ textArea.addEventListener("input", function (event) {
 
 window.addEventListener("resize", function () {
   if (window.innerWidth > 850) {
-    document.getElementById("resultado").style.backgroundImage = "url(/img/SearchCoding.svg)";
+    document.getElementById("lupa").style.display = "inline";
   } else {
-    document.getElementById("resultado").style.backgroundImage = "none";
+    document.getElementById("lupa").style.display = "none";
   }
 })
 
@@ -33,7 +33,7 @@ function encriptar() {
 
   if (texto != "") {
     resultado.value = texto.replace(/e/g, "enter").replace(/i/g, "imes").replace(/a/g, "ai").replace(/o/g, "ober").replace(/u/g, "ufat");
-    document.getElementById("resultado").style.backgroundImage = "none";
+    document.getElementById("lupa").style.display = "none";
     copy.disabled = false;
   } else {
     label.style.color = "crimson";
@@ -77,9 +77,9 @@ function limpiar() {
   copy.disabled = true;
   /* console.log(window.innerWidth, 'ancho'); */
   if (window.innerWidth > 850) {
-    document.getElementById("resultado").style.backgroundImage = "url(/img/SearchCoding.svg)";
+    document.getElementById("lupa").style.display = "inline";
   } else {
-    document.getElementById("resultado").style.backgroundImage = "none";
+    document.getElementById("lupa").style.display = "none";
   }
 }
 
